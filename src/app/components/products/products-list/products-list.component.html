@@ -1,0 +1,34 @@
+
+    <h6 class="text-center">List User and Jobs</h6>
+    <table class="table table-dark">
+        <thead>
+              <th scope="col">Name</th>
+              <th scope="col">CPF</th>
+              <th scope="col">Date</th>
+              <th scope="col">Address</th>
+              <th scope="col">Education</th>
+              <th scope="col">Experience working</th>
+              <th scope="col">Goals</th>
+              <th scope="col">Link</th>                
+          </thead>
+      <tbody>
+        <tr *ngFor="let product of productList">
+          <td>{{product.name}}</td>
+          <td>{{product.cpf}}</td>
+          <td>{{product.datanascimento}}</td>
+          <td>{{product.endereco}}</td>
+          <td>{{product.formacao}}</td>
+          <td>{{product.experienciaprofisional}}</td>
+          <td>{{product.competencias}}</td>
+          <td>{{product.linkedin}}</td>      
+          <td>
+            <a class="btn btn-secondary text-white" (click)="onEdit(product)">
+              <i class="far fa-edit"></i>
+            </a>
+            <a class="btn btn-danger text-white" (click)="onDelete(product.$key)"> 
+              <i class="fas fa-trash-alt"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
